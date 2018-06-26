@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Topic.create([{name: "AI"}, {name: "ML"},{name: "Vue.js"},{name: "Python"},{name: "Firebase"}, {name: "Tensorflow"},{name: "AWS SageMaker"}])

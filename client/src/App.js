@@ -1,18 +1,29 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Home from './components/Home'
 import './App.css';
 
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = {topics: []};
+    this.getTopics = this.getTopics.bind(this);
+  }
+
+  getTopics(){
+    fetch('api/v1/topics')
+    .then(res => res.json())
+    .then(topics => {
+      debugger;
+      this.setState({topics: JSON.stringify(topics)})
+    })
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <button onClick={this.getTopics}> Get Topics</button>
+        <p>{this.state.topics}</p>
+
       </div>
     );
   }
