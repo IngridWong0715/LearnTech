@@ -1,4 +1,4 @@
-class MoocsController < ApplicationController
+class Api::V1::MoocsController < ApplicationController
   before_action :set_mooc, only: [:show, :update, :destroy]
 
   # GET /moocs
